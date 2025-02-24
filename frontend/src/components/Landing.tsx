@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom"
 import { Room } from "./Room"
 
 export const Landing = () => {
@@ -37,7 +36,9 @@ export const Landing = () => {
                 <div>
                     <video ref={videoRef} autoPlay/>
                     <input onChange={e => setName(e.target.value)} type="text"></input>
-                    <Link to={`/room/?name=${name}`}>Join Room</Link>
+                    <button onClick={() => {
+                        setJoined(true)
+                    }}>Join Room</button>
                 </div>
             </>
         )
